@@ -12,7 +12,7 @@ use App\Handlers\StartHandler;
 use App\Handlers\HelpButtonHandler;
 use App\Handlers\KickMember;
 use App\Handlers\RestrictMember;
-
+use App\Handlers\SetLanguage;
 use Zetgram\Bot;
 
 require __DIR__ . '/boot.php';
@@ -30,7 +30,7 @@ $bot->hears('!kick.*',KickMember::class,ChatAdminFilter::class);
 $bot->hears('!ro.*',RestrictMember::class,ChatAdminFilter::class);
 $bot->hears('!ban.*',BanMember::class,ChatAdminFilter::class);
 
-$bot->addRoute(PrivateChatHandler::class, PrivateChatFilter::class);
+$bot->action('lang_.*',SetLanguage::class,CallbackQuery::class);
+$bot->action('help',HelpButtonHandler::class,CallbackQuery::class);
 
-$bot->addCallbackRoute(HelpButtonHandler::class,CallbackQuery::class);
 $bot->run();

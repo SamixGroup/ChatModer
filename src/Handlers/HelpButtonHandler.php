@@ -5,7 +5,7 @@ namespace App\Handlers;
 use Zetgram\Handlers\CallbackQueryHandler;
 use Zetgram\ApiAbstract;
 use Zetgram\InlineKeyboard;
-
+use App\User;
 
 class HelpButtonHandler extends CallbackQueryHandler
 {
@@ -20,13 +20,15 @@ class HelpButtonHandler extends CallbackQueryHandler
     }
     public function handleCallbackQuery($callback)
     {
-        $keyboard = [
+        $locale = User::getLocale($callback->from->id);
+        echo $locale;
+        $button = [
             'inline_keyboard'=>[
                 [['text'=>'Zetgram','url'=>'https://t.me/zet_gram']],
                 [['url'=>'https://github.com/samixgroup/chatmoder','text'=>'Source code']]
                 ]
             ];
-        $this->api->editMessageText($callback->from->id,$callback->message->messageId,null,trans('help'),'markdown',$keyboard);
+        $this->api->editMessageText($callback->from->id,$callback->message->messageId,null,trans('help',[],$locale),'markdown',$button);
     }
 }
 

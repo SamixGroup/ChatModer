@@ -7,7 +7,7 @@ Type this command on your teminal/console:
 
  `composer install`
 
- To run your bot set BOT_TOKEN and BOT_ID as yours and run:
+ To run your bot set BOT_TOKEN and BOT_ID in .env as yours and run:
 
  `php longpolling.php`
 

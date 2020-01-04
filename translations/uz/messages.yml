@@ -4,6 +4,8 @@ welcome: |-
   Bu bot guruhlarni tartibga solishga mo'ljallashtirilgan.
   Yordam olish uchun tugmani bosing
 
+set-language: "Tilni tanlang\nВыберите язык"
+
 help: |-
   Qo'llanma:
   `!kick` bu komanda guruh a'zoasini guruhdan haydash uchun

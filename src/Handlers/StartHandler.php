@@ -2,7 +2,7 @@
 
 namespace App\Handlers;
 
-use App\User;
+
 use Zetgram\ApiAbstract;
 use Zetgram\Handlers\MessageHandler;
 use Zetgram\Types\Message;
@@ -25,9 +25,7 @@ class StartHandler extends MessageHandler
     public function handleMessage(Message $message)
     {
         $button = new InlineKeyboard();
-        $button->addUrl(['t.me/zetgram'=>'Zetgram']);
-        $button->addCallback(['help'=>"Qo'llanma"]);
-        $this->api->sendMessage($message->chat->id, trans('welcome'),$button,null,'markdown');
-        User::add($message->from->id);
+        $button->addCallback(['lang_uz'=>"O'zbek tili",'lang_ru'=>"Русский язык"]);
+        $this->api->sendMessage($message->chat->id, trans('set-language'),$button,null,'markdown');
     }
 }
