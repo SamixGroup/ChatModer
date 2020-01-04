@@ -13,7 +13,7 @@ use Zetgram\Types\Message;
 class PrivateChatHandler extends MessageHandler
 {
     /**
-     * @var ApiAbstract
+     * @var \Zetgram\ApiAbstract $api
      */
     private ApiAbstract $api;
 

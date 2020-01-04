@@ -1,12 +1,12 @@
 {
-    "name": "kripton/botman",
+    "name": "samixgroup",
     "description": "Telegram BOT",
     "type": "project",
     "license": "MIT",
     "authors": [
         {
-            "name": "kriptonuz",
-            "email": "kripton253@gmail.com"
+            "name": "samixgroup",
+            "email": "samixgroupmedia@gmail.com"
         }
     ],
     "minimum-stability": "dev",

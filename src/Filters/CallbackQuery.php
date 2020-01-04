@@ -5,14 +5,14 @@ namespace App\Filters;
 use Zetgram\Filters\FilterInterface;
 use Zetgram\Types\Update;
 
-class AdminChatFilter implements FilterInterface
+class CallbackQuery implements FilterInterface
 {
 
     public function check(Update $update, ...$params): bool
     {
-        if(!isset($update->message))
+        if(!isset($update->callbackQuery))
             return false;
-
-        return $update->message->chat->id === (int)getenv('ADMIN_CHAT');
+        
+        return true;
     }
 }

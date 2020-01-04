@@ -2,3 +2,4 @@
 /vendor/
 /resources/
 composer.lock
+.env

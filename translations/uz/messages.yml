@@ -1,6 +1,15 @@
 welcome: |-
   Assalamu aleykum!
 
-  Sizga qanday yordam beraolishim mumkin? Savolingiz bo'lsa marhamat, sizga tez orada javob beramiz.
-foward_other_people_s_message: Birovning xabarlarini yo'naltiraolmaysiz
-message_not_delivered: Xabar yetib bormadi. Xabar bazadan topilmadi
+  Bu bot guruhlarni tartibga solishga mo'ljallashtirilgan.
+  Yordam olish uchun tugmani bosing
+
+help: |-
+  Qo'llanma:
+  `!kick` bu komanda guruh a'zoasini guruhdan haydash uchun
+  `!ro` bu komanda guruh a'zosini 30 daqiqaga read-only ga tushuradi  
+
+kicked: :name guruhdan haydaldi
+restricted: :name 30 daqiqaga read-only rejimga tushurildi
+
+reply-empty: Ushbu komandani biron bir habarga javob tariqasida ishlatish kerak.

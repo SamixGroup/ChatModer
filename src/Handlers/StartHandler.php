@@ -6,11 +6,14 @@ use App\User;
 use Zetgram\ApiAbstract;
 use Zetgram\Handlers\MessageHandler;
 use Zetgram\Types\Message;
+use Zetgram\InlineKeyboard;
+use Zetgram\Types\InlineKeyboardMarkup;
+
 
 class StartHandler extends MessageHandler
 {
     /**
-     * @var ApiAbstract
+     * @var \Zetgram\ApiAbstract $api
      */
     private ApiAbstract $api;
 
@@ -21,7 +24,10 @@ class StartHandler extends MessageHandler
 
     public function handleMessage(Message $message)
     {
-        $this->api->sendMessage($message->chat->id, trans('welcome'));
+        $button = new InlineKeyboard();
+        $button->addUrl(['t.me/zetgram'=>'Zetgram']);
+        $button->addCallback(['help'=>"Qo'llanma"]);
+        $this->api->sendMessage($message->chat->id, trans('welcome'),$button,null,'markdown');
         User::add($message->from->id);
     }
 }
